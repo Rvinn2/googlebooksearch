@@ -27,7 +27,8 @@ var BooksSchema = new Schema({
 
   Image: {
     type: String,
-    required: true
+    required: true,
+    default: "https://images.app.goo.gl/FrFFpk4LNayEzuqk8"
   },
   // `note` is an object that stores a Note id
   // The ref property links the ObjectId to the Note model

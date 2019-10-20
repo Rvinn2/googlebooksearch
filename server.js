@@ -23,13 +23,13 @@ connection.on("error", (err) => {
     console.log("Mongoose default connection error: " + err);
 });
 
-app.get("/api/cars/:id", function(req, res) {
-    db.Tesla.findById(req.params.id)
-    .then((singleTesla) => {
+app.get("/api/books/:id", function(req, res) {
+    db.Books.findById(req.params.id)
+    .then((singleBooks) => {
         res.json({
-            message: "Requested all Teslas",
+            message: "Requested all Books",
             error: false,
-            data: singleTesla
+            data: singleBooks
         });
     }).catch((err) => {
         console.log(err);
@@ -40,14 +40,14 @@ app.get("/api/cars/:id", function(req, res) {
     })
 });
 
-app.get("/api/cars", function(req, res) {
-    db.Tesla.find({})
-    .then((allTeslas) => {
-        console.log(allTeslas);
+app.get("/api/books", function(req, res) {
+    db.Books.find({})
+    .then((allBooks) => {
+        console.log(allBooks);
         res.json({
-            message: "Requested all Teslas",
+            message: "Requested all Books",
             error: false,
-            data: allTeslas
+            data: allBooks
         });
     }).catch((err) => {
         console.log(err);
@@ -59,13 +59,13 @@ app.get("/api/cars", function(req, res) {
 });
 
 app.post("/api/new", function(req, res) {
-    db.Tesla.create(req.body)
-    .then((newTesla) => {
-        console.log("New tesla: ", newTesla);
+    db.Books.create(req.body)
+    .then((newBooks) => {
+        console.log("New books: ", newBooks);
         res.json({
             message: "Successfully created",
             error: false,
-            data: newTesla
+            data: newBook
         })
     }).catch((err) => {
         console.log(err);

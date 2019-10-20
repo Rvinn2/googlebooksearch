@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import API from "../utils/API.js";
 
 class Collection extends Component {
   state = {
@@ -14,7 +15,7 @@ class Collection extends Component {
   getBooks = () => {
     axios
       .get("/api/books")
-      .then(cars => {
+      .then(books => {
         console.log(books);
         this.setState({ books: books.data.data });
       })
@@ -27,6 +28,7 @@ class Collection extends Component {
     return (
       <div>
         <h1>Collection of Books</h1>
+        <Link to="/Search" >Search Books</Link>
         {this.state.books.map((book, i) => (
           <div key={book._id}>
             <p>Title: {book.titile}</p>
@@ -34,7 +36,7 @@ class Collection extends Component {
             <p>Image: {book.image}</p>
             <p>Description: {book.description}</p>
             <p>Link: {book.link}</p>
-            <Link to={"/collection/" + car._id}>Link</Link>
+            <Link to={"/collection/" + book._id}>Link</Link>
           </div>
         ))}
       </div>

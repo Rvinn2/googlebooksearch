@@ -5,7 +5,7 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <h1>This is my homepage.</h1>
+                <h1>Welcome To Google Book Search.</h1>
                 <Link to="/books" >View My books</Link>
             </div>
         );
