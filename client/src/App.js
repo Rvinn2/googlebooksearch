@@ -8,8 +8,9 @@ function App() {
   return (
     <Router> 
     <Switch>
-    <Route path= "/home"component={Home} />
-    <Route path= "/books"component={Books} />
+    <Route path= "/books" component={Books} />
+    <Route path= "/" component={Home} />
+    
     </Switch>
   </Router>
   
